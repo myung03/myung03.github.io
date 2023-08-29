@@ -44,13 +44,17 @@ const services = [
     icon: web,
   },
   {
-    title: "Student",
+    title: "FullStack Developer",
     icon: mobile,
   },
   {
-    title: "FullStack Developer",
+    title: "Student",
     icon: backend,
   },
+  {
+    title: "Tech Enthusiast",
+    icon: backend, // CHANGE ICON
+  }
 ];
 
 // list of technologies with corresponding icons 
