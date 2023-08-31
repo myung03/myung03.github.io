@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
@@ -15,7 +14,7 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} line-1 anim-typewriter text-black`}>
-            Hi, I'm <span className='text-[#392f5a]'>Matthew</span>
+            Hi, I'm <span className='text-[#392f5a]'>Matthew!</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-black`}>
             I'm a student at UBC. <br className='sm:block hidden' />

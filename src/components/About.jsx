@@ -1,37 +1,47 @@
 import React from 'react';
-import Tile from 'react-parallax-tilt';
+import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
+import { headshot } from '../assets/index';
 
 import { styles } from '../styles';
-import { services } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 
+import { SectionWrapper } from '../wrapper';
+import { Tech } from '../components';
+
 const About = () => {
-  const ServiceCard = ({index, title, icon}) => {
-    return (
-      <p className="text-black">{title}</p>
-    )
-  }
   return (
     <>
     <motion.div variants={textVariant()}>
       <p className={styles.sectionSubText}>About Me</p>
       <h2 className={styles.sectionHeadText}>Overview</h2>
     </motion.div>
-
+    <div className="mt-5 flex flex-col md:flex-row justify-center items-center gap-[10%]">
     <motion.p variants={fadeIn("", "", 0.1, 1)} className="mt-4 text-black text-[17px] max-w-3xl leading-[30px]">
       I'm a third year student pursuing a double major in Computer Science and Cognitive Systems at the University of British Columbia. 
       Some of my interests and passions include web development, artifical intelligence, and hackathons. I have experience with languages and frameworks such as 
-      Python, Java, React.js, Three.js, Tailwind, Chakra, and more! I love learning new things and always believe there is more room to grow as a developer. I'm currently looking for a 2024 summer internship!
+      Python, Java, React.js, Three.js, and more - take a look at the icons below to see all the technologies I'm proficient with! 
     </motion.p>
 
-    <div className="mt-20 flex flex-wrap gap-10">
-      {services.map((service, index) => (
-        <ServiceCard key={service.ttile} index={index} {...service}/>
-      ))}
+    <div className="flex justify-center items-center mt-12 md:mt-0">
+    <Tilt className="xs:w-[250px] w-full">
+        <motion.div variants={fadeIn("right", "spring", 0.5, 0.75)}
+        className="w-full main-gradient p-[2px] rounded-[20px] shadow-2xl">
+          <div options={{
+            max: 45,
+            scale: 1,
+            speed: 450,
+          }}>
+            <img src={headshot} alt={headshot} className="object-contain rounded-[20px]" />
+          </div>
+  
+        </motion.div>
+      </Tilt>
     </div>
+    </div>
+    <Tech></Tech>
     </>
   )
 }
 
-export default About
+export default SectionWrapper(About, "about");
