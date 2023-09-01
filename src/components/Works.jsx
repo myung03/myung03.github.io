@@ -10,7 +10,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const Works = () => {
   return (
     <>
-         <motion.div variants={textVariant()}>
+         <motion.div className="mt-[-7%]" variants={textVariant()}>
         <p className={`${styles.sectionSubText}`}>
           My Portfolio
         </p>
