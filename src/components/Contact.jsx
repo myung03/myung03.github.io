@@ -85,7 +85,7 @@ const Contact = () => {
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='mt-12 flex flex-col gap-8 glassmorphism p-8 rounded-2xl'
+          className='mt-0 md:mt-6 flex flex-col gap-8 glassmorphism p-8 rounded-2xl'
         >
           <label className='flex flex-col'>
             <span className='text-black font-medium mb-4'>Your Name</span>
