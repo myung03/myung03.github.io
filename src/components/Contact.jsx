@@ -3,9 +3,8 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../wrapper";
-import { slideIn } from "../utils/motion";
+import { slideIn, fadeIn } from "../utils/motion";
 
 const Contact = () => {
   const formRef = useRef();
@@ -65,20 +64,28 @@ const Contact = () => {
   };
 
   return (
-    <div
-      className={`mt-[-5%] mx-20 flex flex-row flex-col-reverse justify-center overflow-hidden`}
-    >
-      <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.75] glassmorphism p-8 rounded-2xl'
-      >
-        <p className={styles.sectionSubText}>Get in touch</p>
+    <>
+<p className={`${styles.sectionSubText} mt-[-8%]`}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact</h3>
+        <motion.p variants={fadeIn("", "", 0.1, 1)} className="mt-4 text-black text-[17px] max-w-3xl leading-[30px]">
+      Feel free to reach out! I'm always open to new opportunities and collaborations, and would love to chat about anything tech-related. Talk soon!
+    </motion.p>
+
+    <div
+      className={`mx-15 flex flex-row flex-col-reverse justify-center overflow-hidden`}
+    >
+      
+      <motion.div
+        variants={slideIn("left", "tween", 0.1, 0.8)}
+        className='flex-[0.75] p-8 rounded-2xl'
+      >
+
+      
 
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='mt-12 flex flex-col gap-8'
+          className='mt-12 flex flex-col gap-8 glassmorphism p-8 rounded-2xl'
         >
           <label className='flex flex-col'>
             <span className='text-black font-medium mb-4'>Your Name</span>
@@ -123,6 +130,7 @@ const Contact = () => {
         </form>
       </motion.div>
     </div>
+    </>
   );
 };
 
