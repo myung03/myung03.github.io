@@ -1,14 +1,21 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
     const computer = useGLTF("./desktop_pc/model.gltf");
+    const meshRef = React.useRef();
+    useFrame(({ clock }) => {
+      // Rotate the mesh here
+      if (meshRef.current) {
+        meshRef.current.rotation.y += 0.005;  // Adjust the speed as you like
+      }
+    });
   
     return (
-      <mesh>
+      <mesh ref={meshRef}>
         {/* Hemisphere light for soft global illumination */}
         <hemisphereLight intensity={0.55} groundColor='black' />
         
@@ -68,7 +75,8 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop='demand'
+     style={{ pointerEvents: 'none' }}
+      frameloop='always'
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
