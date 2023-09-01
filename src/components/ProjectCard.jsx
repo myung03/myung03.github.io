@@ -11,7 +11,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
         max: 45,
         scale: 1,
         speed: 500,
-      }} className="glassmorphism p-4 rounded-2xl sm:w-[360px] w-full">
+      }} className="glassmorphism p-4 rounded-2xl sm:w-[360px] w-full h-full flex flex-col justify-between">
         <div className="relative w-full h-[230px]">
           <img src={image} alt={name} className="w-full h-full object-cover rounded-2xl" />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
@@ -28,12 +28,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
 
         <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
-            </p>
+             <img key={tag.name} src={tag.name} alt={tag.alt}/>
           ))}
         </div>
       </Tilt>
