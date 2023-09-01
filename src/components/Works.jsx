@@ -20,7 +20,7 @@ const Works = () => {
       </motion.div>
 
       <div className="w-full flex">
-        <motion.p variants={fadeIn("", "", 0.1, 1)} className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
+        <motion.p variants={fadeIn("", "", 0.1, 1)} className="mt-3 text-black text-[17px] max-w-3xl leading-[30px]">
           Here are some of my projects that I've worked on. I'm always working on new projects and improving on old ones, so check back soon for more!
         </motion.p>
       </div>
