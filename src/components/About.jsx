@@ -13,7 +13,7 @@ const About = () => {
   return (
     <>
     <motion.div variants={textVariant()}>
-      <p className={`${styles.sectionSubText} mt-[-15%] md:mt-0`}>About Me</p>
+      <p className={`${styles.sectionSubText} mt-[-7%] md:mt-0`}>About Me</p>
       <h2 className={styles.sectionHeadText}>Overview</h2>
     </motion.div>
     <div className="mt-5 flex flex-col md:flex-row justify-center items-center gap-[10%]">
